@@ -17,7 +17,6 @@
 #
 #  class { 'networker':
 #    ensure_setting => 'present',
-#    servers_file   => 'hiera',
 #  }
 #
 class networker (
@@ -35,8 +34,6 @@ class networker (
   $package_server,
   $package_storagenode,
   Array[String] $servers,
-  String $servers_file,
-  $servers_file_name,
   String $service_portrange,
   $version_client,
   $version_console,
