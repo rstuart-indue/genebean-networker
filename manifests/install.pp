@@ -1,5 +1,5 @@
 # Installs NetWorker from a repository
-class networker::install inherits networker {
+class networker::install {
   case $facts['os']['family'] {
     'RedHat', 'Debian' : {
       # Install the client
@@ -46,7 +46,7 @@ class networker::install inherits networker {
 
     } # end RedHat
 
-    default        : {
+    default: {
       fail("${::osfamily} is not yet supported by this module.
        Please file a bug report if it should be.")
     }

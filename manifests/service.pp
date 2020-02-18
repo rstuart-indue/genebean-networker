@@ -1,7 +1,7 @@
 # Configures the NetWorker service
 class networker::service inherits networker {
   case $facts['os']['family'] {
-    'RedHat', 'Debian' : {
+    'RedHat', 'Debian': {
       service { 'networker':
         ensure     => 'running',
         enable     => true,
@@ -19,7 +19,7 @@ class networker::service inherits networker {
 
   # Set Portranges once the service is running
   case $facts['kernel'] {
-    'Linux'   : {
+    'Linux': {
       if $facts['nsr_serviceports'] != $::networker::service_portrange {
         exec { 'set_nsr_serviceports':
           command   => "/usr/bin/nsrports -S ${::networker::service_portrange}",
@@ -37,7 +37,7 @@ class networker::service inherits networker {
       }
     } # end Linux
 
-    default        : {
+    default: {
       fail("Setting port ranges on ${::kernel} is not yet supported by this
        module. Please file a bug report if it should be.")
     }
