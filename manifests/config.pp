@@ -12,6 +12,7 @@ class networker::config {
         before => File['/nsr/res/servers'],
       }
 
+      $lservers = $networker::servers
       file { '/nsr/res/servers':
         ensure  => 'present',
         content => template('networker/servers.erb'),
