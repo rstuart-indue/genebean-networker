@@ -7,6 +7,9 @@
 # === Parameters
 #
 #   See README.md for parameter info.
+#   Each $ensure_(component) is expected to contain either a version string
+#   or 'absent' or 'present'. For windows clients it must be either 'absent' or
+#   the specific version required - a windows package specific issue
 #
 # === Examples
 #
@@ -20,28 +23,27 @@
 #  }
 #
 class networker (
+  Array[String] $servers,
   String $connection_portrange,
-  $install_client,
-  $install_console,
-  $install_nmda,
-  $install_sap,
-  $install_server,
-  $install_storagenode,
+  String $service_portrange,
   $package_client,
   $package_console,
   $package_nmda,
   $package_sap,
   $package_server,
   $package_storagenode,
-  Array[String] $servers,
-  String $service_portrange,
-  $version_client,
-  $version_console,
-  $version_nmda,
-  $version_sap,
-  $version_server,
-  $version_storagenode,
-  ) {
+  $package_licm,
+  $package_nmc,
+  $ensure_client,
+  $ensure_console,
+  $ensure_nmda,
+  $ensure_sap,
+  $ensure_server,
+  $ensure_storagenode,
+  $ensure_licm,
+  $ensure_nmc,
+  Optional[String] $absolute_source = undef,
+) {
 
   contain ::networker::install
   contain ::networker::config

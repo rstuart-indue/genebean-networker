@@ -1,22 +1,20 @@
 ---
 networker::connection_portrange: '0-0'
-networker::install_client      : true
-networker::install_console     : false
-networker::install_nmda        : false
-networker::install_sap         : false
-networker::install_server      : false
-networker::install_storagenode : false
-networker::package_client      : ['lgtoclnt', 'lgtoman']
+networker::package_client      : 'lgtoclnt'
 networker::package_console     : 'lgtonmc'
 networker::package_nmda        : 'lgtonmda'
+networker::package_sap         : 'lgtonmsap'
 networker::package_server      : 'lgtoserv'
 networker::package_storagenode : 'lgtonode'
-networker::package_sap         : 'lgtonmsap'
+networker::package_licm        : 'lgtolicm'
+networker::package_nmc         : 'lgtonmc'
 networker::servers             : ['server1.example.com', 'server2.example.com']
 networker::service_portrange   : '7937-9936'
-networker::version_client      : present
-networker::version_console     : present
-networker::version_nmda        : present
-networker::version_sap         : present
-networker::version_server      : present
-networker::version_storagenode : present
+networker::ensure_client       : 'present'
+networker::ensure_console      : 'absent'
+networker::ensure_nmda         : 'absent'
+networker::ensure_sap          : 'absent'
+networker::ensure_server       : 'absent'
+networker::ensure_storagenode  : 'absent'
+networker::ensure_licm         : 'absent'
+networker::ensure_nmc          : 'absent'
