@@ -13,42 +13,32 @@ class networker::install {
     }
   } # end case
 
-  $components = [
-    'client',
-    'console',
-    'nmda',
-    'sap',
-    'server',
-    'storagenode',
-    'licm',
-  ]
-
-  package { $package_client:
-    ensure => $ensure_client,
+  package { $networker::package_client:
+    ensure => $networker::ensure_client,
   }
 
-  package { $package_console:
-    ensure => $ensure_console,
+  package { $networker::package_console:
+    ensure => $networker::ensure_console,
   }
 
-  package { $package_nmda:
-    ensure => $ensure_nmda,
+  package { $networker::package_nmda:
+    ensure => $networker::ensure_nmda,
   }
 
-  package { $package_sap:
-    ensure => $ensure_sap,
+  package { $networker::package_sap:
+    ensure => $networker::ensure_sap,
   }
 
-  package { $package_server:
-    ensure => $ensure_server,
+  package { $networker::package_server:
+    ensure => $networker::ensure_server,
   }
 
-  package { $package_storagenode:
-    ensure => $ensure_storagenode,
+  package { $networker::package_storagenode:
+    ensure => $networker::ensure_storagenode,
   }
 
-  package { $package_licm:
-    ensure => $ensure_licm,
+  package { $networker::package_licm:
+    ensure => $networker::ensure_licm,
   }
 
 }
