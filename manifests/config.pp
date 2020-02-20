@@ -16,7 +16,6 @@ class networker::config {
       file { '/nsr/res/servers':
         ensure  => 'present',
         content => template('networker/servers.erb'),
-        require => Package['lgtoclnt'],
         notify  => Service['networker'],
       }
 
