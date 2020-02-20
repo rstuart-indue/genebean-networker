@@ -33,7 +33,6 @@ class networker (
   $package_server,
   $package_storagenode,
   $package_licm,
-  $package_nmc,
   $ensure_client,
   $ensure_console,
   $ensure_nmda,
@@ -41,7 +40,6 @@ class networker (
   $ensure_server,
   $ensure_storagenode,
   $ensure_licm,
-  $ensure_nmc,
   Optional[String] $absolute_source = undef,
 ) {
 

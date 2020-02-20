@@ -21,15 +21,34 @@ class networker::install {
     'server',
     'storagenode',
     'licm',
-    'nmc',
   ]
 
-  $components.each |String $component| {
-    $pkg_component = "networker::package_${component}"
-    $ens_component = "networker::ensure_${component}"
-    package { $pkg_component:
-      ensure => $ens_component,
-    }
+  package { $package_client:
+    ensure => $ensure_client,
+  }
+
+  package { $package_console:
+    ensure => $ensure_console,
+  }
+
+  package { $package_nmda:
+    ensure => $ensure_nmda,
+  }
+
+  package { $package_sap:
+    ensure => $ensure_sap,
+  }
+
+  package { $package_server:
+    ensure => $ensure_server,
+  }
+
+  package { $package_storagenode:
+    ensure => $ensure_storagenode,
+  }
+
+  package { $package_licm:
+    ensure => $ensure_licm,
   }
 
 }
