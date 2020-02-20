@@ -25,8 +25,10 @@ class networker::install {
   ]
 
   $components.each |String $component| {
-    package { "${networker::package_${component}}":
-      ensure => "${networker::ensure_${component}}",
+    $pkg_component = "networker::package_${component}"
+    $ens_component = "networker::ensure_${component}"
+    package { $pkg_component:
+      ensure => $ens_component,
     }
   }
 
