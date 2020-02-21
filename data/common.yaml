@@ -1,5 +1,7 @@
 ---
 networker::connection_portrange: '0-0'
+networker::service_portrange   : '7937-9936'
+networker::servers             : ['server1.example.com', 'server2.example.com']
 networker::package_client      : 'lgtoclnt'
 networker::package_console     : 'lgtonmc'
 networker::package_nmda        : 'lgtonmda'
@@ -7,8 +9,6 @@ networker::package_sap         : 'lgtonmsap'
 networker::package_server      : 'lgtoserv'
 networker::package_storagenode : 'lgtonode'
 networker::package_licm        : 'lgtolicm'
-networker::servers             : ['server1.example.com', 'server2.example.com']
-networker::service_portrange   : '7937-9936'
 networker::ensure_client       : 'present'
 networker::ensure_console      : 'absent'
 networker::ensure_nmda         : 'absent'
